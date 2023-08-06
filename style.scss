@@ -74,6 +74,9 @@ body {
                 span {
                     color: #e75e5e;
                 }
+                &.summery_info{
+                    display: none;
+                }
             }
 
             .resume_btn {
@@ -162,6 +165,12 @@ body {
             display: inline-block;
         }
         .screen_wrapper .item_box .screen_content {
+            display: block;
+        }
+        .screen_wrapper .item_box .screen_user .user_summery {
+            display: none;
+        }
+        .screen_wrapper .item_box .screen_user .user_summery.summery_info {
             display: block;
         }
     }

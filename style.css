@@ -66,6 +66,9 @@ body {
 .screen_wrapper .item_box.item_box_right .user_summery span {
   color: #e75e5e;
 }
+.screen_wrapper .item_box.item_box_right .user_summery.summery_info {
+  display: none;
+}
 .screen_wrapper .item_box.item_box_right .resume_btn {
   padding: 15px 36px;
   font-size: 12px;
@@ -139,5 +142,11 @@ body {
   display: inline-block;
 }
 .toggle_control:checked + .screen_wrapper .item_box .screen_content {
+  display: block;
+}
+.toggle_control:checked + .screen_wrapper .item_box .screen_user .user_summery {
+  display: none;
+}
+.toggle_control:checked + .screen_wrapper .item_box .screen_user .user_summery.summery_info {
   display: block;
 }/*# sourceMappingURL=style.css.map */
