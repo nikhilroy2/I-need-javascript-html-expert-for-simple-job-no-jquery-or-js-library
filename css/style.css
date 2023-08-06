@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.screen_wrapper {
+  height: 100vh;
+  display: flex;
+}
+.screen_wrapper .item_box {
+  width: 50%;
+  height: 100%;
+}
+.screen_wrapper .item_box.item_box_left {
+  background: url(./main-photo-alt.jpg) center/cover no-repeat;
+}/*# sourceMappingURL=style.css.map */

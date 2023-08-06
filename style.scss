@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #111111;
+    font-family: 'Open Sans', sans-serif;
+    line-height: normal;
+}
+
+.screen_wrapper {
+    height: 100vh;
+    display: flex;
+
+    .item_box {
+        width: 50%;
+        height: 100%;
+        transition: .5s;
+
+        &.item_box_left {
+            background: url(../images/main-photo-alt.jpg) center/cover no-repeat;
+            position: relative;
+            &::after{
+                content: '';
+                opacity: .3;
+                width: 100%;
+                background: #000;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &.item_box_right {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            padding-right: 30px;
+            position: relative;
+
+            .screen_user {
+                width: 460px;
+            }
+
+            .avatar_box {
+                img {
+                    display: inline-block;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100%;
+                }
+            }
+
+            .user_name {
+                font-size: 26px;
+                font-family: 'Raleway', sans-serif;
+
+            }
+
+            .user_summery {
+                font-size: 11px;
+                margin-bottom: 15px;
+                font-weight: 600;
+                font-family: 'Open Sans', sans-serif;
+                letter-spacing: .1em;
+                text-transform: uppercase;
+
+                span {
+                    color: #e75e5e;
+                }
+            }
+
+            .resume_btn {
+                padding: 15px 36px;
+                font-size: 12px;
+                text-transform: uppercase;
+                border: 2px solid;
+                border-color: #e75e5e;
+                color: #111111;
+                background: transparent;
+                border-radius: 0px;
+                cursor: pointer;
+                transition: all 0.2s ease-out;
+                display: inline-flex;
+                align-items: center;
+                font-family: 'Raleway', sans-serif !important;
+                font-weight: bold;
+                color: #000;
+                user-select: none;
+
+                svg {
+                    padding-left: 10px;
+                }
+
+                &.cv_download {
+                    font-size: 11px;
+                    padding: 6px 26px;
+                    text-decoration: none;
+                    display: none;
+                }
+
+                &:hover {
+                    background: #e75e5e;
+                    color: #fff;
+
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+
+            .angle_arrow_control {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 25px 30px ;
+                margin-left: 5px;
+                transition: .3s;
+                cursor: pointer;
+                display: none;
+                &:hover{
+                    margin-left: 0px;
+                }
+                svg {
+                    transform: scaleX(-1);
+                    height: 30px;
+                }
+            }
+
+            .screen_content{
+                display: none;
+                padding: 60px 30px;
+                border-left: 1px solid #ececec;
+                height: 100%;
+            }
+        }
+    }
+
+
+}
+
+.toggle_control {
+    &:checked+ {
+        .screen_wrapper .item_box.item_box_left {
+            width: 0;
+        }
+
+        .screen_wrapper .item_box .screen_user .resume_btn {
+            display: none;
+        }
+
+        .screen_wrapper .item_box .screen_user .resume_btn.cv_download {
+            display: inline-block;
+        }
+        .screen_wrapper .item_box .screen_user .angle_arrow_control {
+            display: inline-block;
+        }
+        .screen_wrapper .item_box .screen_content {
+            display: block;
+        }
+    }
+}
